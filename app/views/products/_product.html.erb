@@ -1,0 +1,20 @@
+<div>
+  <h3>Titre</h3>
+  <%= product.title %>
+
+  <h3>Description</h3>
+  <%= product.description %>
+
+  <h3>Prix</h3>
+  <%= product.price %>
+
+  <h3>Conditionnement</h3>
+  <%= product.packaging %>
+
+  <h3>Image</h3>
+  <% if product.picture.attached? %>
+    <%= image_tag product.picture %>
+  <% end %>
+</div>
+
+<hr>

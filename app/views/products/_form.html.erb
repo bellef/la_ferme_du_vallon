@@ -1,0 +1,26 @@
+<%= form_with model: product do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <div>
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+  </div>
+  <div>
+    <%= f.label :packaging %>
+    <%= f.text_field :packaging %>
+  <div>
+    <%= f.label :picture %>
+    <%= f.file_field :picture %>
+  </div>
+  <div>
+    <%= f.submit "Sauvegarder" %>
+  </div>
+<% end %>
+
+
