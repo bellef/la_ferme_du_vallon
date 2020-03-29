@@ -1,0 +1,36 @@
+fr:
+  activerecord:
+    models:
+      product: Produit
+    attributes:
+      product:
+        description: Description
+        packaging: Conditionnement
+        picture: Image
+        price: Prix (€)
+        title: Titre
+  city: Montbrun-les-Bains
+  layouts:
+    application:
+      sign_in: Connexion
+      sign_out: Déconnexion
+  pages:
+    home:
+      title: Bienvenue à La Ferme du Vallon
+      subtitle: Découvrez nos produits et commandez-les par téléphone au 0423455667
+      our_products: Nos produits
+  product_name: La Ferme du Vallon
+  products:
+    form:
+      placeholders:
+        description: Des bonnes patates comme on les aime
+        packaging: Sac de 2kg
+        title: Pommes de terre
+      save: Enregistrer
+      cancel: Annuler
+    index:
+      add_product: Ajouter un produit
+      title: :pages.home.our_products
+    product:
+      edit: Modifier
+      destroy: Supprimer

@@ -2,14 +2,14 @@
   <article class="tile is-child box">
     <p class="title is-size-4"><%= product.title %></p>
     <p class="subtitle"><%= product.description %></p>
-    <p><%= t('.price') %> : <%= product.price %></p>
-    <p><%= t('.packaging') %> : <%= product.packaging %></p>
+    <p><%= Product.human_attribute_name(:price) %> : <%= product.price %></p>
+    <p><%= Product.human_attribute_name(:packaging) %> : <%= product.packaging %></p>
 
-    <figure class="image">
-      <% if product.picture.attached? %>
-        <%= image_tag product.picture %>
-      <% end %>
-    </figure>
+    <% if product.picture.attached? %>
+      <figure class="image">
+          <%= image_tag product.picture %>
+      </figure>
+    <% end %>
 
     <% if admin_signed_in? %>
     <div class="columns">
