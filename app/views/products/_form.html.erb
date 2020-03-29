@@ -1,26 +1,62 @@
 <%= form_with model: product do |f| %>
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  <div class="field is-horizontal">
+    <div class="field-label">
+      <%= f.label :title, class: "label" %>
+    </div>
+    <div class="field-body">
+      <%= f.text_field :title, class: "input", placeholder: t('.placeholders.title') %>
+    </div>
   </div>
-  <div>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+
+  <div class="field is-horizontal">
+    <div class="field-label">
+      <%= f.label :description, class: "label" %>
+    </div>
+    <div class="field-body">
+      <%= f.text_area :description, class: "input", placeholder: t('.placeholders.description') %>
+    </div>
   </div>
-  <div>
-    <%= f.label :price %>
-    <%= f.number_field :price %>
+
+  <div class="field is-horizontal">
+    <div class="field-label">
+      <%= f.label :price, class: "label" %>
+    </div>
+    <div class="field-body">
+      <%= f.number_field :price, class: "input" %>
+    </div>
   </div>
-  <div>
-    <%= f.label :packaging %>
-    <%= f.text_field :packaging %>
-  <div>
-    <%= f.label :picture %>
-    <%= f.file_field :picture %>
+
+  <div class="field is-horizontal">
+    <div class="field-label">
+      <%= f.label :packaging, class: "label" %>
+    </div>
+    <div class="field-body">
+      <%= f.text_field :packaging, class: "input", placeholder: t('.placeholders.packaging') %>
+    </div>
   </div>
-  <div>
-    <%= f.submit "Sauvegarder" %>
+
+  <div class="field is-horizontal">
+    <div class="field-label">
+      <%= f.label :picture, class: "label" %>
+    </div>
+    <div class="field-body">
+      <%= f.file_field :picture, class: "input" %>
+    </div>
+  </div>
+
+  <div class="field is-horizontal">
+    <div class="field-label">
+      <!-- Left empty for spacing -->
+    </div>
+    <div class="field-body">
+      <div class="field is-grouped">
+        <div class="control">
+          <%= f.submit t('.save'), class: "button is-link" %>
+        </div>
+        <div class="control">
+          <%= link_to t('.cancel'), products_path, class: "button is-link is-light" %>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>
-
-

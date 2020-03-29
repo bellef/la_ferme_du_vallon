@@ -1,7 +1,16 @@
-<h1>Products</h1>
+<div class="container">
+  <section class="section">
+    <div class="has-text-centered">
+      <h1 class="title"><%= t('.title') %></h1>
+    </div>
+  </section>
 
-<% if admin_signed_in? %>
-  <%= link_to t('.new_product'), new_product_path %>
-<% end %>
+  <% if admin_signed_in? %>
+    <%= link_to t('.new_product'), new_product_path %>
+  <% end %>
 
-<%= render partial: "product", collection: @products %>
+  <!--div class="columns is-multiline"-->
+  <div class="tile is-ancestor" style="flex-wrap: wrap;">
+    <%= render partial: "product", collection: @products %>
+  </div>
+</div>

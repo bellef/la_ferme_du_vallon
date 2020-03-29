@@ -7,20 +7,35 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
-  <body>
-    <%= link_to t('.home'), root_path %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <body class="has-navbar-fixed-top">
+    <%= render partial: 'components/navbar' %>
+
+    <div class="notice">
+      <%= notice %>
+    </div>
+    <div class="alert">
+      <%= alert %>
+    </div>
+
     <%= yield %>
   </body>
 
-  <footer>
-    <% if admin_signed_in? %>
-      <%= link_to t('.sign_out'), destroy_admin_session_path, method: :delete %>
-    <% else %>
-      <%= link_to t('.sign_in'), new_admin_session_path %>
-    <% end %>
-  </footer>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>La Ferme du Vallon</strong> réalisé par François Belle.
+        Tous droits réservés.
+      </p>
+      <p>
+        <% if admin_signed_in? %>
+          <%= link_to t('.sign_out'), destroy_admin_session_path, method: :delete %>
+        <% else %>
+          <%= link_to t('.sign_in'), new_admin_session_path %>
+        <% end %>
+      </p>
+    </footer>
+  </div>
 </html>

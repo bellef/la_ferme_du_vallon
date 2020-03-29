@@ -1,24 +1,25 @@
-<div>
-  <h3><%= t('.title') %></h3>
-  <%= product.title %>
+<div class="tile is-parent is-3">
+  <article class="tile is-child box">
+    <p class="title is-size-4"><%= product.title %></p>
+    <p class="subtitle"><%= product.description %></p>
+    <p><%= t('.price') %> : <%= product.price %></p>
+    <p><%= t('.packaging') %> : <%= product.packaging %></p>
 
-  <h3><%= t('.description') %></h3>
-  <%= product.description %>
+    <figure class="image">
+      <% if product.picture.attached? %>
+        <%= image_tag product.picture %>
+      <% end %>
+    </figure>
 
-  <h3><%= t('.price') %></h3>
-  <%= product.price %>
-
-  <h3><%= t('.packaging') %></h3>
-  <%= product.packaging %>
-
-  <% if product.picture.attached? %>
-    <%= image_tag product.picture %>
-  <% end %>
-
-  <% if admin_signed_in? %>
-    <%= link_to t('.edit'), edit_product_path(product) %>
-    <%= link_to t('.destroy'), product_path(product), method: :delete %>
-  <% end %>
+    <% if admin_signed_in? %>
+    <div class="columns">
+      <div class="column has-text-centered">
+        <%= link_to t('.edit'), edit_product_path(product), class: "button is-primary is-outlined" %>
+      </div>
+      <div class="column has-text-centered">
+        <%= link_to t('.destroy'), product_path(product), method: :delete, class: "button is-danger is-outlined" %>
+      </div>
+    </div>
+    <% end %>
+  </article>
 </div>
-
-<hr>
