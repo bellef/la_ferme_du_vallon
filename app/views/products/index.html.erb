@@ -1,3 +1,7 @@
 <h1>Products</h1>
 
+<% if admin_signed_in? %>
+  <%= link_to t('.new_product'), new_product_path %>
+<% end %>
+
 <%= render partial: "product", collection: @products %>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LaFermeDuVallon</title>
+    <title><%= t('main_title') %> - <%= t('city') %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,8 +10,17 @@
   </head>
 
   <body>
+    <%= link_to t('.home'), root_path %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
+
+  <footer>
+    <% if admin_signed_in? %>
+      <%= link_to t('.sign_out'), destroy_admin_session_path, method: :delete %>
+    <% else %>
+      <%= link_to t('.sign_in'), new_admin_session_path %>
+    <% end %>
+  </footer>
 </html>

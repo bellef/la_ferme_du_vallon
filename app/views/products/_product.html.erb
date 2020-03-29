@@ -1,19 +1,23 @@
 <div>
-  <h3>Titre</h3>
+  <h3><%= t('.title') %></h3>
   <%= product.title %>
 
-  <h3>Description</h3>
+  <h3><%= t('.description') %></h3>
   <%= product.description %>
 
-  <h3>Prix</h3>
+  <h3><%= t('.price') %></h3>
   <%= product.price %>
 
-  <h3>Conditionnement</h3>
+  <h3><%= t('.packaging') %></h3>
   <%= product.packaging %>
 
-  <h3>Image</h3>
   <% if product.picture.attached? %>
     <%= image_tag product.picture %>
+  <% end %>
+
+  <% if admin_signed_in? %>
+    <%= link_to t('.edit'), edit_product_path(product) %>
+    <%= link_to t('.destroy'), product_path(product), method: :delete %>
   <% end %>
 </div>
 
