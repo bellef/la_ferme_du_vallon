@@ -4,6 +4,9 @@
     <p class="subtitle"><%= product.description %></p>
     <p><%= Product.human_attribute_name(:price) %> : <%= product.price %></p>
     <p><%= Product.human_attribute_name(:packaging) %> : <%= product.packaging %></p>
+    <p>
+      <%= product.categories.map(&:title).join(', ') %>
+    </p>
 
     <% if product.picture.attached? %>
       <figure class="image">

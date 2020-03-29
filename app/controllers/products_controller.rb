@@ -1,9 +1,10 @@
 class ProductsController < ApplicationController
   before_action :authenticate_admin!, only: %i[new create edit update destroy]
   before_action :load_product, only: %i[edit update destroy]
+  before_action :load_categories, only: %i[new edit]
 
   def index
-    @products = Product.all
+    @products = Product.all.includes(:categories)
   end
 
   def new
@@ -49,7 +50,11 @@ class ProductsController < ApplicationController
   private
 
     def load_product
-      @product = Product.find(params[:id])
+      @product = Product.includes(:categories).find(params[:id])
+    end
+
+    def load_categories
+      @categories = Category.all
     end
 
     def product_params
@@ -59,7 +64,8 @@ class ProductsController < ApplicationController
               :description,
               :price,
               :packaging,
-              :picture
+              :picture,
+              :category_ids
             )
     end
 end

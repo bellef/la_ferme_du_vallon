@@ -45,6 +45,24 @@
   </div>
 
   <div class="field is-horizontal">
+    <div class="field-label is-normal">
+      <%= f.label :categories, class: "label" %>
+    </div>
+    <div class="field-body">
+      <% categories.each do |category| %>
+        <% checked = product.category_ids.include? category.id %>
+
+        <div class="field">
+          <label class="checkbox">
+            <%= check_box_tag 'category_ids[]', category.id, checked %>
+            <%= category.title %>
+          </label>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="field is-horizontal">
     <div class="field-label">
       <!-- Left empty for spacing -->
     </div>
