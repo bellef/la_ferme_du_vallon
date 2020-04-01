@@ -5,6 +5,11 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all.includes(:categories)
+    @categories = Category.all
+
+    if params[:category_id].present?
+      @products = @products.with_category(params[:category_id])
+    end
   end
 
   def new

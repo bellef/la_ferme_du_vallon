@@ -17,6 +17,7 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 import("stylesheets/bulma")
+import("stylesheets/application")
 
 // Navbar
 document.addEventListener('DOMContentLoaded', () => {
