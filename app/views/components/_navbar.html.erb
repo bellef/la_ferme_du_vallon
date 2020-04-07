@@ -1,21 +1,20 @@
-<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <div class="navbar-item">
-      <%= link_to t('.home'), root_path %>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <%= link_to t('.home'), root_path, class: "navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarProductCategories">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-
-  <div id="navbarProductCategories" class="navbar-menu">
-    <div class="navbar-start">
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
       <% @categories.each do |category| %>
-        <%= link_to category.title, products_path(category_id: category.id), class: 'navbar-item' %>
+        <li class="nav-item <%= 'active' if navbar_active_category?(category) %>">
+          <%= link_to category.title, products_path(category_id: category.id), class: "nav-link" %>
+        </li>
       <% end %>
-    </div>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
   </div>
 </nav>
