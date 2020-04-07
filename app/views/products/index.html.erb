@@ -1,12 +1,17 @@
 <%= render partial: 'components/navbar' %>
 
-<div class="container mt-4rem">
+<div class="container">
   <% if admin_signed_in? %>
     <%= link_to t('.add_product'), new_product_path %>
   <% end %>
 
-  <!--div class="columns is-multiline"-->
-  <div class="tile is-ancestor" style="flex-wrap: wrap;">
-    <%= render partial: "product", collection: @products %>
+  <div class="row">
+    <% if @products.present? %>
+      <%= render partial: "product", collection: @products %>
+    <% else %>
+      <section class="py-5">
+        <%= t('.no_results') %>
+      </section>
+    <% end %>
   </div>
 </div>

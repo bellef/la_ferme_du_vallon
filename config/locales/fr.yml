@@ -20,7 +20,7 @@ fr:
   pages:
     home:
       title: Bienvenue à La Ferme du Vallon
-      subtitle: Découvrez nos produits et commandez-les par téléphone au 0423455667
+      subtitle: Découvrez nos produits et commandez-les par téléphone au 0423455667.
       our_products: Nos produits
   product_name: La Ferme du Vallon
   products:
@@ -33,6 +33,7 @@ fr:
       cancel: Annuler
     index:
       add_product: Ajouter un produit
+      no_results: Aucun résultat à afficher pour la catégorie sélectionnée.
       title: :pages.home.our_products
     product:
       edit: Modifier
