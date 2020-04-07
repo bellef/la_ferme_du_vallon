@@ -10,6 +10,9 @@ fr:
         price: Prix (€)
         title: Titre
   city: Montbrun-les-Bains
+  components:
+    navbar:
+      product_name: :product_name
   layouts:
     application:
       sign_in: Connexion
