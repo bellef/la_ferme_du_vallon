@@ -3,6 +3,8 @@ class ProductsController < ApplicationController
   before_action :load_product, only: %i[edit update destroy]
   before_action :load_categories, only: %i[new edit]
 
+  I18N_SUBJECT = Product.model_name.human
+
   def index
     @products = Product.all.includes(:categories)
     @categories = Category.all
@@ -20,10 +22,10 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
 
     if @product.save
-      flash.notice = I18n.t('.create.success')
+      flash.notice = I18n.t('actions.create.success', subject: I18N_SUBJECT)
       redirect_to products_path
     else
-      flash.alert = I18n.t('.create.failure', message: @product.errors.full_messages.join(', '))
+      flash.alert = I18n.t('actions.create.failure', message: @product.errors.full_messages.join(', '))
       render :new
     end
   end
@@ -34,17 +36,17 @@ class ProductsController < ApplicationController
     @product.assign_attributes(product_params)
 
     if @product.save
-      flash.notice = I18n.t('.update.success')
+      flash.notice = I18n.t('actions.update.success', subject: I18N_SUBJECT)
       redirect_to products_path
     else
-      flash.alert = I18n.t('.update.failure', message: @product.errors.full_messages.join(', '))
+      flash.alert = I18n.t('actions.update.failure', message: @product.errors.full_messages.join(', '))
       render :edit
     end
   end
 
   def destroy
     if @product.destroy
-      flash.notice = I18n.t('.destroy.success')
+      flash.notice = I18n.t('.destroy.success', subject: I18N_SUBJECT)
       redirect_to products_path
     else
       flash.alert = I18n.t('.destroy.failure', message: @product.errors.full_messages.join(', '))

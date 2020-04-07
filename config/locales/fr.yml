@@ -1,4 +1,11 @@
 fr:
+  actions:
+    create:
+      success: "%{subject} créé avec succès"
+    update:
+      success: "%{subject} mis à jour avec succès"
+    destroy:
+      success: "%{subject} supprimé avec succès"
   activerecord:
     models:
       product: Produit

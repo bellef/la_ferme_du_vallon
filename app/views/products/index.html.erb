@@ -1,17 +1,21 @@
 <%= render partial: 'components/navbar' %>
 
-<div class="container">
+<div class="container py-3">
   <% if admin_signed_in? %>
-    <%= link_to t('.add_product'), new_product_path %>
+    <div class="row">
+      <div class="mx-auto">
+        <%= link_to t('.add_product'), new_product_path, class: "btn btn-primary my-3" %>
+      </div>
+    </div>
   <% end %>
 
-  <div class="row">
-    <% if @products.present? %>
+  <% if @products.present? %>
+    <div class="row row-cols-1 row-cols-md-3">
       <%= render partial: "product", collection: @products %>
-    <% else %>
-      <section class="py-5">
-        <%= t('.no_results') %>
-      </section>
-    <% end %>
-  </div>
+    </div>
+  <% else %>
+    <section class="py-5">
+      <%= t('.no_results') %>
+    </section>
+  <% end %>
 </div>

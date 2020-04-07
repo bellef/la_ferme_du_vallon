@@ -1,27 +1,24 @@
-<div class="tile is-parent is-3">
-  <article class="tile is-child box">
-    <p class="title is-size-4"><%= product.title %></p>
-    <p><%= product.price %> € / <%= product.packaging %></p>
-    <p class="subtitle"><%= product.description %></p>
-    <p>
-      <%= product.categories.map(&:title).join(', ') %>
-    </p>
-
+<div class="col mb-4">
+  <div class="card h-100 bg-light">
     <% if product.picture.attached? %>
-      <figure class="image">
-          <%= image_tag product.picture.variant(resize: [200, 300]) %>
-      </figure>
+      <%= image_tag product.picture, class: "card-img-top", alt: product.title %>
     <% end %>
 
-    <% if admin_signed_in? %>
-    <div class="columns">
-      <div class="column has-text-centered">
-        <%= link_to t('.edit'), edit_product_path(product), class: "button is-primary is-outlined" %>
-      </div>
-      <div class="column has-text-centered">
-        <%= link_to t('.destroy'), product_path(product), method: :delete, class: "button is-danger is-outlined" %>
-      </div>
+    <div class="card-body">
+      <h5 class="card-title text-dark"><%= product.title %></h5>
+      <p class="card-text"><%= product.description %></p>
+      <small><%= product.categories.map(&:title).join(', ') %></small>
+
+      <% if admin_signed_in? %>
+        <p class="card-text">
+          <%= link_to t('.edit'), edit_product_path(product), class: "card-link text-primary" %>
+          <%= link_to t('.destroy'), product_path(product), method: :delete, class: "card-link text-danger" %>
+        </p>
+      <% end %>
     </div>
-    <% end %>
-  </article>
+
+    <div class="card-footer bg-primary text-light">
+      <%= product.price %> € / <%= product.packaging %>
+    </div>
+  </div>
 </div>
