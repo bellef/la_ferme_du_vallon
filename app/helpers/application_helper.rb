@@ -11,7 +11,10 @@ module ApplicationHelper
   end
 
   def navbar_active_category?(category)
-    # TODO
-    false
+    found_category = Category.find_by(id: params[:category_id])
+
+    return unless found_category
+
+    found_category.id == category.id
   end
 end
