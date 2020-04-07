@@ -1,14 +1,11 @@
-<section class="hero has-text-centered">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title is-1 has-text-white">
-        <%= t('.title') %>
-      </h1>
-      <p class="subtitle is-2 has-text-light">
-        <%= t('.subtitle') %>
-      </p>
-
-      <%= link_to t('.our_products'), products_path, class: "button is-primary is-large" %>
-    </div>
+<div class="jumbotron jumbotron-fluid bg-cover"
+     style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.6) 100%,rgba(255,255,255,0.9) 100%), url(<%= asset_path 'hero1.jpg' %>)">
+  <div class="container">
+    <h1 class="display-4 text-dark"><%= t('.title') %></h1>
+    <p class="lead text-dark"><%= t('.subtitle') %></p>
+    <hr class="my-4">
+    <p class="lead">
+      <%= link_to t('.our_products'), products_path, class: "btn btn-primary btn-lg", role: "button" %>
+    </p>
   </div>
-</section>
+</div>

@@ -2,5 +2,13 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~bootswatch/dist/minty/bootswatch";
 
-@import "custom";
 @import "product";
+
+.bg-cover {
+  height: 800px;
+  padding-top: 150px;
+  background-attachment: static;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
