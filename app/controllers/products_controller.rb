@@ -46,10 +46,10 @@ class ProductsController < ApplicationController
 
   def destroy
     if @product.destroy
-      flash.notice = I18n.t('.destroy.success', subject: I18N_SUBJECT)
+      flash.notice = I18n.t('actions.destroy.success', subject: I18N_SUBJECT)
       redirect_to products_path
     else
-      flash.alert = I18n.t('.destroy.failure', message: @product.errors.full_messages.join(', '))
+      flash.alert = I18n.t('actions.destroy.failure', message: @product.errors.full_messages.join(', '))
       redirect_to products_path
     end
   end

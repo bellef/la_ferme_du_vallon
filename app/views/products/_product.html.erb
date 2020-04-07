@@ -12,7 +12,7 @@
       <% if admin_signed_in? %>
         <p class="card-text">
           <%= link_to t('.edit'), edit_product_path(product), class: "card-link text-primary" %>
-          <%= link_to t('.destroy'), product_path(product), method: :delete, class: "card-link text-danger" %>
+          <%= link_to t('.destroy'), product_path(product), method: :delete, class: "card-link text-danger", "data-confirm" => t('.confirm_destroy', product_name: product.title) %>
         </p>
       <% end %>
     </div>
