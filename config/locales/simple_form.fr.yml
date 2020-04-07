@@ -1,0 +1,29 @@
+fr:
+  simple_form:
+    "no": Non
+    "yes": Oui
+    error_notification:
+      default_message: "Veuillez résoudre les problèmes ci-dessous :"
+    placeholders:
+      product:
+        description: "Ex: Des bonnes patates comme on les aime"
+        packaging: "Ex: Sac de 2kg"
+        title: "Ex: Pommes de terre"
+    required:
+      text: Requis
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    # Translate attributes here if default translation is not enough
+    # labels:
+    #   product:
+    # Translate hints here if default translation is not enough
+    # hints:
+    #   product:
+    # Translate blank inclusion here if default translation is not enough
+    # include_blanks:
+    #   product:
+    # Translate prompts here if default translation is not enough
+    # prompts:
+    #   product:

@@ -2,15 +2,19 @@ fr:
   actions:
     create:
       success: "%{subject} créé avec succès"
+      failure: "Création impossible, veuillez vérifier le formulaire et réessayer"
     update:
       success: "%{subject} mis à jour avec succès"
+      failure: "Mise à jour impossible, veuillez vérifier le formulaire et réessayer"
     destroy:
       success: "%{subject} supprimé avec succès"
+      failure: "Suppression impossible : %{message}"
   activerecord:
     models:
       product: Produit
     attributes:
       product:
+        categories: Catégories
         description: Description
         packaging: Conditionnement
         picture: Image
@@ -35,10 +39,6 @@ fr:
     form:
       create_or_edit_a_product: Créer ou modifier un produit
       cancel: Annuler
-      placeholders:
-        description: "Ex: Des bonnes patates comme on les aime"
-        packaging: "Ex: Sac de 2kg"
-        title: "Ex: Pommes de terre"
       save: Enregistrer
     index:
       add_product: Ajouter un produit

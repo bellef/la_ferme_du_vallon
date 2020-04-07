@@ -7,6 +7,7 @@ class Product < ApplicationRecord
   validates :title, presence: true
   validates :price, presence: true
   validates :packaging, presence: true
+  validates :categories, presence: true
 
   scope :with_category, -> (category_id) { joins(:categories).where(categories: { id: category_id }) }
 end

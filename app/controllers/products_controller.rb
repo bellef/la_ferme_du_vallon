@@ -1,12 +1,12 @@
 class ProductsController < ApplicationController
   before_action :authenticate_admin!, only: %i[new create edit update destroy]
   before_action :load_product, only: %i[edit update destroy]
-  before_action :load_categories, only: %i[new edit]
 
   I18N_SUBJECT = Product.model_name.human
 
   def index
     @products = Product.all.includes(:categories)
+    # Load categories for navbar
     @categories = Category.all
 
     if params[:category_id].present?
@@ -25,7 +25,6 @@ class ProductsController < ApplicationController
       flash.notice = I18n.t('actions.create.success', subject: I18N_SUBJECT)
       redirect_to products_path
     else
-      flash.alert = I18n.t('actions.create.failure', message: @product.errors.full_messages.join(', '))
       render :new
     end
   end
@@ -39,7 +38,6 @@ class ProductsController < ApplicationController
       flash.notice = I18n.t('actions.update.success', subject: I18N_SUBJECT)
       redirect_to products_path
     else
-      flash.alert = I18n.t('actions.update.failure', message: @product.errors.full_messages.join(', '))
       render :edit
     end
   end
@@ -60,10 +58,6 @@ class ProductsController < ApplicationController
       @product = Product.includes(:categories).find(params[:id])
     end
 
-    def load_categories
-      @categories = Category.all
-    end
-
     def product_params
       params.require(:product).
             permit(
@@ -72,7 +66,7 @@ class ProductsController < ApplicationController
               :price,
               :packaging,
               :picture,
-              :category_ids
+              category_ids: []
             )
     end
 end

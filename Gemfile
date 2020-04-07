@@ -33,6 +33,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # -----------
 gem 'cloudinary' # Cloud storage
 gem 'devise' # User authentication
+gem 'rails-i18n'
+gem 'simple_form' # Forms made better (errors, labels, hints)
 # -----------
 # Custom gems
 # -----------

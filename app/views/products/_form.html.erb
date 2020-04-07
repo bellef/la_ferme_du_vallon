@@ -1,55 +1,20 @@
-<%= form_with model: product, class: "my-5" do |f| %>
+<%= simple_form_for product, html: { class: "my-5" } do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
   <fieldset>
     <legend><%= t('.create_or_edit_a_product') %></legend>
 
-    <!-- TITLE -->
-    <div class="form-group">
-      <%= f.label :title %>
-      <%= f.text_field :title, class: "form-control", placeholder: t('.placeholders.title') %>
-    </div>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :packaging %>
+    <%= f.input :price %>
+    <%= f.input :picture %>
+    <%= f.association :categories, as: :check_boxes %>
 
-    <!-- DESCRIPTION -->
-    <div class="form-group">
-      <%= f.label :description %>
-      <%= f.text_field :description, class: "form-control", placeholder: t('.placeholders.description') %>
-    </div>
-
-    <!-- PACKAGING -->
-    <div class="form-group">
-      <%= f.label :packaging %>
-      <%= f.text_field :packaging, class: "form-control", placeholder: t('.placeholders.packaging') %>
-    </div>
-
-    <!-- PRICE -->
-    <div class="form-group">
-      <%= f.label :price %>
-      <%= f.number_field :price, class: "form-control" %>
-    </div>
-
-    <!-- PICTURE -->
-    <div class="form-group">
-      <%= f.label :picture %>
-      <%= f.file_field :picture, class: "form-control" %>
-    </div>
-
-    <!-- CATEGORIES -->
-    <div class="form-group">
-      <%= f.label :categories, class: "label" %>
-
-      <% categories.each do |category| %>
-        <% checked = product.category_ids.include? category.id %>
-
-        <div class="form-check">
-          <label class="form-check-label">
-            <%= check_box_tag 'category_ids[]', category.id, checked, class: "form-check-input" %>
-            <%= category.title %>
-          </label>
-        </div>
-      <% end %>
-    </div>
-
-    <!-- CONTROL BUTTONS -->
-    <%= f.submit t('.save'), class: "btn btn-primary" %>
-    <%= link_to t('.cancel'), products_path, class: "btn btn-secondary" %>
+    <%= f.button :submit, t('.save'), class: "btn btn-primary" %>
+    <%= f.button :button do %>
+      <%= link_to t('.cancel'), products_path, class: "btn btn-secondary" %>
+    <% end %>
   </fieldset>
 <% end %>
