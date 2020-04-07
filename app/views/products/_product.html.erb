@@ -1,16 +1,15 @@
 <div class="tile is-parent is-3">
   <article class="tile is-child box">
     <p class="title is-size-4"><%= product.title %></p>
+    <p><%= product.price %> € / <%= product.packaging %></p>
     <p class="subtitle"><%= product.description %></p>
-    <p><%= Product.human_attribute_name(:price) %> : <%= product.price %></p>
-    <p><%= Product.human_attribute_name(:packaging) %> : <%= product.packaging %></p>
     <p>
       <%= product.categories.map(&:title).join(', ') %>
     </p>
 
     <% if product.picture.attached? %>
       <figure class="image">
-          <%= image_tag product.picture %>
+          <%= image_tag product.picture.variant(resize: [200, 300]) %>
       </figure>
     <% end %>
 
