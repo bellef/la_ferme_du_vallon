@@ -12,7 +12,6 @@ module LaFermeDuVallon
     config.load_defaults 6.0
 
     config.i18n.default_locale = :fr
-    config.force_ssl = true
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
