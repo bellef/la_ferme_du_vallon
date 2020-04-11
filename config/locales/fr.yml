@@ -29,6 +29,11 @@ fr:
     application:
       sign_in: Connexion
       sign_out: Déconnexion
+      meta:
+        description: Bienvenue à la Ferme du Vallon à Montbrun-les-bains ! Venez découvrir nos productions en agriculture biologique.
+        opengraph:
+          title: La Ferme du Vallon à Montbrun-les-bains
+          description: Bienvenue à la Ferme du Vallon à Montbrun-les-bains ! Venez découvrir nos productions en agriculture biologique.
   pages:
     home:
       title: Bienvenue à La Ferme du Vallon

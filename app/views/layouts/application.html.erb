@@ -2,6 +2,21 @@
 <html>
   <head>
     <title><%= t('product_name') %> - <%= t('city') %></title>
+
+    <meta name="description" content="<%= t('.meta.description') %>">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="French">
+    <meta name="author" content="François BELLE">
+    <meta name="generator" content="Ruby on Rails / Bootstrap / Minty">
+
+    <!-- OpenGraph meta for social networks -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.lafermeduvallon.net">
+    <meta property="og:title" content="<%= t('.meta.opengraph.title') %>">
+    <meta property="og:description" content="<%= t('.meta.opengraph.description') %>">
+    <meta property="og:image" content="<%= asset_url 'hero1.jpg' %>">
+    <meta property=”og:image” content=”http://www.yourdomain.com/image-name.jpg” />
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -32,10 +47,7 @@
     </p>
     <p>
       <strong>© La Ferme du Vallon</strong> réalisé par François Belle. Tous droits réservés.<br>
-      Fait avec <%= link_to 'Ruby on Rails', "https://rubyonrails.org/" %>,
-      <%= link_to 'Bootstrap', "https://getbootstrap.com/" %>
-      et <%= link_to 'Minty', "https://bootswatch.com/minty/" %>
-      sous <%= link_to 'licence MIT', "https://github.com/thomaspark/bootswatch/blob/master/LICENSE" %><br>
+      Utilise du code sous <%= link_to 'licence MIT', "https://github.com/thomaspark/bootswatch/blob/master/LICENSE" %>.<br>
     </p>
   </footer>
 </html>
