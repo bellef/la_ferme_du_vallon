@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   I18N_SUBJECT = Product.model_name.human
 
   def index
-    @products = Product.all.includes(:categories)
+    @products = Product.all.with_attached_picture.includes(:categories)
     # Load categories for navbar
     @categories = Category.all
 
