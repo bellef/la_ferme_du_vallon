@@ -32,7 +32,8 @@ fr:
   pages:
     home:
       title: Bienvenue à La Ferme du Vallon
-      subtitle: Découvrez nos produits et commandez-les par téléphone au 0423455667.
+      subtitle: À Montbrun-les-Bains en Drôme Provençale
+      discover_html: Découvrez nos produits et commandez-les <strong>par téléphone au 0423455667</strong>
       our_products: Nos produits
   product_name: La Ferme du Vallon
   products:
