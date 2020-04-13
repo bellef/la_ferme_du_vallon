@@ -20,10 +20,19 @@ fr:
         picture: Image
         price: Prix (€)
         title: Titre
+      admin:
+        email: E-mail
+        password: Mot de passe
   city: Montbrun-les-Bains
   components:
     navbar:
       product_name: :product_name
+  devise:
+    sessions:
+      new:
+        login: Connexion
+        email: :activerecord.attributes.admin.email
+        password: :activerecord.attributes.admin.password
   layouts:
     application:
       sign_in: Connexion
