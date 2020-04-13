@@ -10,8 +10,8 @@ begin
   puts('DONE')
 
   puts('Creating categories...')
-  vegetables = Category.create!(title: 'Légumes')
-  processed_goods = Category.create!(title: 'Produits transformés')
+  vegetables = Category.create!(title: 'Légumes', position: 1)
+  processed_goods = Category.create!(title: 'Produits transformés', position: 2)
   puts('DONE')
 
   puts('Creating products...')
