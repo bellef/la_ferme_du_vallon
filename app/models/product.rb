@@ -8,6 +8,7 @@ class Product < ApplicationRecord
   validates :price, presence: true
   validates :packaging, presence: true
   validates :categories, presence: true
+  validates :origin, presence: true, allow_blank: false
 
   scope :in_category, -> (category_id) { joins(:categories).where(categories: { id: category_id }) }
 end

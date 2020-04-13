@@ -7,6 +7,11 @@
     <div class="card-body">
       <h5 class="card-title text-dark"><%= product.title %></h5>
       <p class="card-text"><%= product.description %></p>
+      <% if product.is_ab_certified %>
+        <p class="card-text"><%= t('.is_ab_certified') %></p>
+      <% end %>
+      <p class="card-text"><%= t('.origin') %> : <%= product.origin %></p>
+      <p class="card-text"><%= product.european_category %></p>
       <small><%= product.categories.map(&:title).join(', ') %></small>
 
       <% if admin_signed_in? %>

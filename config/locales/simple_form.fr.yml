@@ -9,6 +9,8 @@ fr:
         description: "Ex: Des bonnes patates comme on les aime"
         packaging: "Ex: Sac de 2kg"
         title: "Ex: Pommes de terre"
+        european_category: "Ex: Catégorie 2"
+        origin: "Ex: France"
     required:
       text: Requis
       mark: '*'

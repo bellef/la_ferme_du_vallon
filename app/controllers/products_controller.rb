@@ -67,6 +67,9 @@ class ProductsController < ApplicationController
               :price,
               :packaging,
               :picture,
+              :european_category,
+              :origin,
+              :is_ab_certified,
               category_ids: []
             )
     end

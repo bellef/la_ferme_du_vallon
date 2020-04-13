@@ -16,6 +16,9 @@ fr:
       product:
         categories: Catégories
         description: Description
+        european_category: Catégorie européenne
+        is_ab_certified: Certifié biologique (AB) ?
+        origin: Origine
         packaging: Conditionnement
         picture: Image
         price: Prix (€)
@@ -59,6 +62,8 @@ fr:
       no_results: Aucun résultat à afficher pour la catégorie sélectionnée.
       title: :pages.home.our_products
     product:
-      edit: Modifier
-      destroy: Supprimer
       confirm_destroy: 'Êtes-vous sûr de vouloir supprimer le produit "%{product_name}"'
+      destroy: Supprimer
+      edit: Modifier
+      is_ab_certified: Certifié biologique
+      origin: :activerecord.attributes.product.origin

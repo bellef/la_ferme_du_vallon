@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_13_152657) do
+ActiveRecord::Schema.define(version: 2020_04_13_160912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,9 @@ ActiveRecord::Schema.define(version: 2020_04_13_152657) do
     t.string "packaging"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "european_category"
+    t.string "origin"
+    t.boolean "is_ab_certified"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
