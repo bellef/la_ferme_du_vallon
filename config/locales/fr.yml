@@ -24,7 +24,6 @@ fr:
   components:
     navbar:
       product_name: :product_name
-      all_products: Tous les produits
   layouts:
     application:
       sign_in: Connexion

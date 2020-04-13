@@ -9,9 +9,10 @@ class ProductsController < ApplicationController
     # Load categories for navbar
     @categories = Category.all
 
-    if params[:category_id].present?
-      @products = @products.with_category(params[:category_id])
-    end
+    # Filter either by selected category, or by first one in default order
+    filter_by_category_id = params[:category_id].presence || Category.select(:id).first.id
+
+    @products = @products.in_category(filter_by_category_id)
   end
 
   def new

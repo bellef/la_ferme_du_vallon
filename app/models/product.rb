@@ -9,5 +9,5 @@ class Product < ApplicationRecord
   validates :packaging, presence: true
   validates :categories, presence: true
 
-  scope :with_category, -> (category_id) { joins(:categories).where(categories: { id: category_id }) }
+  scope :in_category, -> (category_id) { joins(:categories).where(categories: { id: category_id }) }
 end

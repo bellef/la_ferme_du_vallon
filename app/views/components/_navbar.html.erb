@@ -6,10 +6,6 @@
 
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <%= link_to t('.all_products'), products_path, class: "nav-link" %>
-      </li>
-
       <% @categories.each do |category| %>
         <li class="nav-item <%= 'active' if navbar_active_category?(category) %>">
           <%= link_to category.title, products_path(category_id: category.id), class: "nav-link" %>
