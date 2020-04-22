@@ -5,14 +5,15 @@ class ProductsController < ApplicationController
   I18N_SUBJECT = Product.model_name.human
 
   def index
-    @products = Product.all.with_attached_picture.includes(:categories)
     # Load categories for navbar
     @categories = Category.all
 
     # Filter either by selected category, or by first one in default order
     filter_by_category_id = params[:category_id].presence || Category.select(:id).first.id
 
-    @products = @products.in_category(filter_by_category_id)
+    @products = Product.references(:categories).
+                        in_category(filter_by_category_id).
+                        with_attached_picture
   end
 
   def new

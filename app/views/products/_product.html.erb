@@ -22,7 +22,10 @@
           <small>/ <%= product.european_category %></small>
         <% end %>
         <br />
-        <small><%= product.categories.map(&:title).join(', ') %></small>
+
+        <small>
+          <%= product.categories.map { |category| link_to_category(category) }.join(', ').html_safe %>
+        </small>
       </p>
 
       <% if admin_signed_in? %>

@@ -17,4 +17,8 @@ module ApplicationHelper
 
     found_category.id == category.id
   end
+
+  def link_to_category(category, css_class: nil)
+    link_to(category.title, products_path(category_id: category.id), class: css_class)
+  end
 end
