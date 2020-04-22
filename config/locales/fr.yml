@@ -9,20 +9,6 @@ fr:
     destroy:
       success: "%{subject} supprimé avec succès"
       failure: "Suppression impossible : %{message}"
-  activerecord:
-    models:
-      product: Produit
-    attributes:
-      product:
-        categories: Catégories
-        description: Description
-        european_category: Catégorie européenne
-        is_ab_certified: Certifié biologique (AB) ?
-        origin: Origine
-        packaging: Conditionnement
-        picture: Image
-        price: Prix (€)
-        title: Titre
       admin:
         email: E-mail
         password: Mot de passe
@@ -45,25 +31,4 @@ fr:
         opengraph:
           title: La Ferme du Vallon à Montbrun-les-bains
           description: Bienvenue à la Ferme du Vallon à Montbrun-les-bains ! Venez découvrir nos productions en agriculture biologique.
-  pages:
-    home:
-      title: Bienvenue à La Ferme du Vallon
-      subtitle: À Montbrun-les-Bains en Drôme Provençale
-      discover_html: Découvrez nos produits et commandez-les <strong>par téléphone au 0611991301.</strong>
-      our_products: Nos produits
   product_name: La Ferme du Vallon
-  products:
-    form:
-      create_or_edit_a_product: Créer ou modifier un produit
-      cancel: Annuler
-      save: Enregistrer
-    index:
-      add_product: Ajouter un produit
-      no_results: Aucun résultat à afficher pour la catégorie sélectionnée.
-      title: :pages.home.our_products
-    product:
-      confirm_destroy: 'Êtes-vous sûr de vouloir supprimer le produit "%{product_name}"'
-      destroy: Supprimer
-      edit: Modifier
-      is_ab_certified: Certifié biologique
-      origin: :activerecord.attributes.product.origin

@@ -1,0 +1,30 @@
+fr:
+  activerecord:
+    models:
+      product: Produit
+    attributes:
+      product:
+        categories: Catégories
+        description: Description
+        european_category: Catégorie européenne
+        is_ab_certified: Certifié biologique (AB) ?
+        origin: Origine
+        packaging: Conditionnement
+        picture: Image
+        price: Prix (€)
+        title: Titre
+  products:
+    form:
+      create_or_edit_a_product: Créer ou modifier un produit
+      cancel: Annuler
+      save: Enregistrer
+    index:
+      add_product: Ajouter un produit
+      no_results: Aucun résultat à afficher pour la catégorie sélectionnée.
+      title: :pages.home.our_products
+    product:
+      confirm_destroy: 'Êtes-vous sûr de vouloir supprimer le produit "%{product_name}"'
+      destroy: Supprimer
+      edit: Modifier
+      is_ab_certified: Certifié biologique
+      origin: :activerecord.attributes.product.origin
