@@ -5,14 +5,25 @@
     <% end %>
 
     <div class="card-body">
-      <h5 class="card-title text-dark"><%= product.title %></h5>
+      <div class="card-title text-dark d-flex flex-row justify-content-between">
+        <h5><%= product.title %></h5>
+        <% if product.is_ab_certified %>
+          <%= image_tag 'logoab_small', style: "height: 2em;" %>
+        <% end %>
+      </div>
+      <!--h5 class="card-title text-dark"><%= product.title %></h5-->
+
       <p class="card-text"><%= product.description %></p>
-      <% if product.is_ab_certified %>
-        <p class="card-text"><%= t('.is_ab_certified') %></p>
-      <% end %>
-      <p class="card-text"><%= t('.origin') %> : <%= product.origin %></p>
-      <p class="card-text"><%= product.european_category %></p>
-      <small><%= product.categories.map(&:title).join(', ') %></small>
+
+      <!-- Origin / Category -->
+      <p class="card-text">
+        <small><%= t('.origin') %> : <%= product.origin %></small>
+        <% if product.european_category.present? %>
+          <small>/ <%= product.european_category %></small>
+        <% end %>
+        <br />
+        <small><%= product.categories.map(&:title).join(', ') %></small>
+      </p>
 
       <% if admin_signed_in? %>
         <p class="card-text">
